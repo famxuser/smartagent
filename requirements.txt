@@ -1,3 +1,4 @@
+rasa==3.6.1
 pymysql
 mysql-connector-python
 # Add more dependencies here
