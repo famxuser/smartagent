@@ -25,6 +25,8 @@ jobs:
           rasa_test: true # Run rasa test
           test_args: --fail-on-prediction-errors # Fail pipeline when test fails
           test_type: all # Run both 'core' and 'nlu' tests
+          publish_summary: true
+          github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload model
         if: github.ref == 'refs/heads/master'
         uses: actions/upload-artifact@master
