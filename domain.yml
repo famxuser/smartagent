@@ -1,0 +1,370 @@
+---
+version: "3.1"
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - bot_challenge
+  - jobsearch
+  - knowaboutpts
+  - exitchatbot
+  - pythondeveloper
+  - yesshift
+  - noshift
+  - yescur
+  - nocur
+  - curentrysalary0-5lakhs
+  - curmidsalary
+  - curhighsalary
+  - curhighmidsalary
+  - cursuperhighsalary
+  - expentrysalary
+  - expmidsalary
+  - exphighsalary
+  - exphighmidsalary
+  - expsuperhighsalary
+  - willing
+  - notwilling
+  - optlap
+  - optlap1
+  - bcp
+  - orn
+  - relocate
+  - notrelocate
+  - offer
+  - offer1
+  - relyears
+  - relyears1
+  - relyears2
+  - shortlist
+  - shortlist1
+  - currentcom
+  - currentcom1
+  - apply
+  - apply1
+  - mlengineer
+  - angular
+  - jobapply
+  - nojobappy
+  - user_input_intent
+  
+
+entities:
+  - jobsearch
+  - knowaboutpts
+  - pythondeveloper
+  - reply
+  - workingshift
+  - yesshift
+  - yescur
+  - nocur
+  - currentsalary
+  - expectedsalary
+  - mlengineer
+  - angular
+  - table1_data
+  - willingtojoin
+  - systemavailability
+  - jobchange
+  - willingtorelocate
+  - offersinhand
+  - relevantyears
+  - shortlisted
+
+slots:
+  jobchange:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: jobchange
+  willingtorelocate:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: willingtorelocate
+  offersinhand:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: offersinhand
+  relevantyears:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: relevantyears
+  shortlisted:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: shortlisted
+  systemavailability:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: systemavailability
+  willingtojoin:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: willingtojoin
+  pythondeveloper:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: pythondeveloper
+  workingshift:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: workingshift
+  currentsalary:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: currentsalary
+  expectedsalary:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: expectedsalary
+  table1_data:
+    type: text
+    mappings:
+      - type: from_text
+        intent: user_input_intent
+        not_intent: excluded_intent
+  value:
+    type: text
+    mappings:
+      - type: from_text
+        intent: user_input_intent
+        not_intent: excluded_intent
+actions:
+  - action_extract_value
+  - action_extract_payload_values
+  - action_insert_into_database
+responses:
+  utter_greet:
+    - text: Select the Options
+      buttons:
+        - title: Jobsearch
+          payload: /jobsearch
+        - title: KnpwaboutPTS
+          payload: /knowaboutpts
+        - title: Exitchatbot
+          payload: /exitchatbot
+  utter_jobsearch:
+    - text: Select the Options?
+      buttons:
+        - title: Pythondeveloper
+          payload: pythondeveloper
+        - title: MLengineer
+          payload: mlengineer
+        - title: Angular
+          payload: angular
+
+  utter_pythondeveloper:
+    - text: Do you have any concern to work in mid shift 2PM -11 PM(IST) ? (If
+        application has been done for IT requirements.use arrows keys
+      buttons:
+        - title: Yes
+          payload: yesshift
+        - title: No
+          payload: noshift
+  utter_yesshift:
+    - text: As the current position  is for mid shift, are you interested join PTS in
+        future for different shift? use arrows keys
+      buttons:
+        - title: Yes
+          payload: /yescur
+        - title: No
+          payload: /nocur
+  utter_yescur:
+    - text: thank you for your interest. Have a great day/evening...Good bye
+  utter_nocur:
+    - text: Thank you !! good bye!
+  utter_noshift:
+    - text: What is your current CTC
+      buttons:
+        - title: "0-5 lakhs"
+          payload: "curentrysalary0-5lakhs"
+        - title: "5-10 lakhs"
+          payload: "curmidsalary"
+        - title: "10-15 lakhs"
+          payload: "curhighsalary"
+        - title: "15-20 lakhs"
+          payload: "curhighmidsalary"
+        - title: "20-25 lakhs"
+          payload: "cursuperhighsalary"
+  utter_curentrysalary:
+    - text: what is your expected CTC
+      buttons:
+        - title: "0-5 lakhs"
+          payload: "expentrysalary"
+        - title: "5-10 lakhs"
+          payload: "expmidsalary"
+        - title: "10-15 lakhs"
+          payload: "exphighsalary"
+        - title: "15-20 lakhs"
+          payload: "exphighmidsalary"
+        - title: "20-25 lakhs"
+          payload: "expsuperhighsalary"
+  utter_expentrysalary:
+    - text: Are you available to join within a month time? (As we do always look for
+        immediate joiners.
+      buttons:
+        - title: "Yes"
+          payload: "willing"
+        - title: "No"
+          payload: "notwilling"
+  utter_willing:
+    - text: Do you have laptop/desktop in handy with specific configuration ? (As its
+        mandate for remote employees).
+      buttons:
+        - title: "Yes"
+          payload: "optlap"
+        - title: "No"
+          payload: "optlap1"
+  utter_optlap:
+    - text: What is the particular reason candidate is looking for job change ?
+      buttons:
+        - title: "Better Career Pospects"
+          payload: "bcp"
+        - title: "Other Reason"
+          payload: "orn"
+  utter_bcp:
+    - text: Are you comfortable to relocate,if required to work from office for
+        particular requirement?
+      buttons:
+        - title: "Yes"
+          payload: "relocate"
+        - title: "No"
+          payload: "notrelocate"
+  utter_bcp1:
+    - text: Are you comfortable to relocate,if required to work from office for
+        particular requirement?
+      buttons:
+        - title: "Yes"
+          payload: "relocate"
+        - title: "No"
+          payload: "notrelocate"
+  utter_relocate:
+    - text: Do you have offers on Hand , if yes why dont you go with that oppurtunity
+      buttons:
+        - title: "interested in working with PTS"
+          payload: "offer"
+        - title: "No"
+          payload: "offer1"
+  utter_relocate1:
+    - text: Do you have offers on Hand , if yes why dont you go with that oppurtunity
+      buttons:
+        - title: "interested in working with PTS"
+          payload: "offer"
+        - title: "No"
+          payload: "offer1"
+  utter_offer:
+    - text: How many years relevant experience candidates are having for specific
+        requirements?
+      buttons:
+        - title: "0-5 Years"
+          payload: "relyears"
+        - title: "5-10 Years"
+          payload: "relyears1"
+        - title: "10+ Years"
+          payload: "relyears2"
+  utter_offer1:
+    - text: "If shortlisted are you willing to take interview till 11:00 pm(IST)?"
+      buttons:
+        - title: "0-5 Years"
+          payload: "relyears"
+        - title: "5-10 Years"
+          payload: "relyears1"
+        - title: "10+ Years"
+          payload: "relyears2"
+  utter_selected1:
+    - text: If shortlisted are you willing to take interview till 11:00 pm(IST)?
+      buttons:
+        - title: "Yes"
+          payload: "shortlist"
+        - title: "No"
+          payload: "shortlist1"
+  utter_selected2:
+    - text: If shortlisted are you willing to take interview till 11:00 pm(IST)?
+      buttons:
+        - title: "Yes"
+          payload: "shortlist"
+        - title: "No"
+          payload: "shortlist1"
+  utter_selected:
+    - text: If shortlisted are you willing to take interview till 11:00 pm(IST)?
+      buttons:
+        - title: "Yes"
+          payload: "shortlist"
+        - title: "No"
+          payload: "shortlist1"
+  utter_shortlist:
+    - text: If selected do you have 3 months of payslips, offer/appoointment letter of
+        current/last company ?
+      buttons:
+        - title: "Yes"
+          payload: "currentcom"
+        - title: "No"
+          payload: "currentcom1"
+  utter_shortlist1:
+    - text: If selected do you have 3 months of payslips, offer/appoointment letter of
+        current/last company ?
+      buttons:
+        - title: "Yes"
+          payload: "currentcom"
+        - title: "No"
+          payload: "currentcom1"
+  utter_applied:
+    - text: previously ever applied in PTS or not
+      buttons:
+        - title: "Yes"
+          payload: "apply"
+        - title: "No"
+          payload: "apply1"
+  utter_applied1:
+    - text: previously ever applied in PTS or not
+      buttons:
+        - title: "Yes"
+          payload: "apply"
+        - title: "No"
+          payload: "apply1"
+  utter_apply:
+    - text: Thank you for your time , you can reapply for the position after 6 months
+        , good bye!!
+      buttons: 
+       - title: ""
+         payload: "app" 
+  utter_apply1:
+    - text: Thank you for your time , good bye!!
+      buttons: 
+        - title: ""
+          payload: "app1"   
+  utter_cheer_up:
+    - text: "Here is something to cheer you up:"
+      image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+    - text: Did that help you?
+  utter_happy:
+    - text: Great, carry on!
+  utter_goodbye:
+    - text: Bye
+  utter_iamabot:
+    - text: I am a bot, powered by Rasa.
+  utter_knowaboutpts:
+    - text: Please visit https://ptscservices.com/about-us.php for more info, do you
+        want to apply for job
+      buttons:
+        - title: Yes
+          payload: jobapply
+        - title: No
+          payload: nojobappy
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

@@ -1,0 +1,253 @@
+version: "3.1"
+
+stories:
+
+- story: Start of the conversation
+  steps:
+   - intent: user_input_intent
+   - action: action_extract_value
+   - action: utter_pythondeveloper
+    
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: Greet and select option
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- story: select option
+  steps:
+  - intent: jobsearch
+  #- action: action_get_db_values
+  #- action: next_action_to_use_data
+  - action: utter_jobsearch
+
+- story: python developer
+  steps:
+  - intent: pythondeveloper
+  - action: utter_pythondeveloper
+
+- story: concern with shift
+  steps:
+   - intent: noshift
+   - action: utter_noshift
+   
+
+- story: concern with shift
+  steps:
+   - intent: yesshift
+   - action: utter_yesshift
+
+- story: future interested in current position
+  steps:
+   - intent: yescur
+   - action: utter_yescur
+
+- story: not interested in current position
+  steps:
+   - intent: nocur
+   - action: utter_nocur
+
+- story: salary
+  steps: 
+    - intent: curentrysalary0-5lakhs
+    - action: utter_curentrysalary
+
+- story: salary
+  steps: 
+    - intent: curmidsalary
+    - action: utter_curentrysalary
+
+- story: salary
+  steps: 
+    - intent: curhighsalary
+    - action: utter_curentrysalary
+
+- story: salary
+  steps: 
+    - intent: curhighmidsalary
+    - action: utter_curentrysalary
+
+- story: salary
+  steps:
+    - intent: cursuperhighsalary
+    - action: utter_curentrysalary
+
+- story: relocation
+  steps: 
+    - intent: expentrysalary
+    - action: utter_expentrysalary
+
+- story: relocation
+  steps: 
+    - intent: expmidsalary
+    - action: utter_expentrysalary
+
+- story: relocation
+  steps: 
+    - intent: exphighsalary
+    - action: utter_expentrysalary
+
+- story: relocation
+  steps: 
+    - intent: exphighmidsalary
+    - action: utter_expentrysalary
+
+- story: relocation
+  steps:
+    - intent: expsuperhighsalary
+    - action: utter_expentrysalary
+
+- story: device
+  steps:
+    - intent: willing
+    - action: utter_willing
+
+- story: device1
+  steps:
+    - intent: notwilling
+    - action: utter_willing
+
+- story: Looking for change
+  steps:
+    - intent: optlap
+    - action: utter_optlap
+
+- story: Looking for change
+  steps:
+    - intent: optlap1
+    - action: utter_optlap
+
+- story: work from office
+  steps:
+    - intent: bcp
+    - action: utter_bcp
+
+- story: work from office
+  steps:
+    - intent: orn
+    - action: utter_bcp
+
+- story: relocate
+  steps:
+    - intent: relocate
+    - action: utter_relocate
+
+- story: not relocate
+  steps:
+    - intent: notrelocate
+    - action: utter_relocate1
+
+- story: offer on hand
+  steps:
+    - intent: offer
+    - action: utter_offer
+
+- story: offer on hand
+  steps:
+    - intent: offer1
+    - action: utter_offer1
+
+- story: offer on hand option
+  steps:
+    - intent: relyears
+    - action: utter_selected
+
+- story: offer on hand option
+  steps:
+    - intent: relyears1
+    - action: utter_selected1
+
+- story: offer on hand option
+  steps:
+    - intent: relyears2
+    - action: utter_selected2
+
+- story: selected
+  steps:
+    - intent: shortlist
+    - action: utter_shortlist
+
+- story: selected1
+  steps:
+    - intent: shortlist1
+    - action: utter_shortlist1
+
+- story: applied to PTS
+  steps:
+    - intent: currentcom
+    - action:  utter_applied
+
+- story: applied to PTS1
+  steps:
+    - intent: currentcom1
+    - action:  utter_applied1
+
+- story: reply to PTS
+  steps:
+    - intent: apply
+    - action: utter_apply
+    
+- story: reply to PTS
+  steps:
+    - intent: apply1
+    - action: utter_apply1
+    - action: action_extract_payload_values
+    - action: action_insert_into_database
+    
+
+- story: know about PTs
+  steps:
+   - intent: knowaboutpts
+   - action: utter_knowaboutpts
+
+- story: know about PTS and apply job
+  steps:
+   - intent:  jobapply
+   - action:  utter_jobsearch
+   - intent:  nojobappy
+   - action:  utter_nocur
+
+- story: exit chatbot
+  steps:
+   - intent: exitchatbot
+   - action: utter_nocur
+
+- story: apply for MLengineer=r
+  steps:
+   - intent: mlengineer
+   - action: utter_pythondeveloper
+
+- story: apply for angular developer
+  steps: 
+   - intent: angular
+   - action: utter_pythondeveloper
+
+
+  

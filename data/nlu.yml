@@ -1,0 +1,274 @@
+version: "3.1"
+
+nlu:
+
+- intent: user_input_intent
+  examples: |
+     - [2866](value){"entity": "value"}
+     - Hey, I want to do something
+     - Can you help me with something?
+     - [USER_INPUT](value){"entity": "value"}          
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: jobsearch
+  examples: |
+    - [jobsearch](jobsearch)
+
+- intent: knowaboutpts
+  examples: |
+    - [knowaboutpts](aboutpts)
+
+- intent: exitchatbot
+
+- intent: pythondeveloper
+  examples: |
+    - [pythondeveloper](pythondeveloper){"entity": "pythondeveloper"}
+
+- intent: noshift
+  examples: |
+   - [noshift](workingshift){"entity": "workingshift"}
+   
+
+- intent: yesshift
+  examples: |
+   - [yesshift](yesshift)
+
+- intent: yescur
+  examples: |
+   - [yescur](yescurr)
+
+
+- intent: nocur
+  examples: |
+   - [nocur](nocur)
+
+- intent: curentrysalary0-5lakhs
+  examples: |
+   - [curentrysalary0-5lakhs](currentsalary){"entity": "currentsalary"}
+
+- intent: curmidsalary
+  examples: |
+   - [curmidsalary](currentsalary){"entity": "currentsalary"}
+
+- intent: curhighsalary
+  examples: |
+   - [curhighsalary](currentsalary){"entity": "currentsalary"}
+
+- intent: curhighmidsalary
+  examples: |
+   - [curhighmidsalary](currentsalary){"entity": "currentsalary"}
+
+- intent: cursuperhighsalary
+  examples: |
+   - [cursuperhighsalary](currentsalary){"entity": "currentsalary"}
+
+- intent: expentrysalary
+  examples: |
+   - [expentrysalary](expectedsalary){"entity": "expectedsalary"}
+
+- intent: expmidsalary
+  examples: |
+   - [expmidsalary](expectedsalary){"entity": "expectedsalary"}
+
+- intent: exphighsalary
+  examples: |
+   - [exphighsalary](expectedsalary){"entity": "expectedsalary"}
+
+- intent: exphighmidsalary
+  examples: |
+   - [exphighmidsalary](expectedsalary){"entity": "expectedsalary"}
+
+- intent: expsuperhighsalary
+  examples: |
+   - [expsuperhighsalary](expectedsalary){"entity": "expectedsalary"}
+
+- intent: willing
+  examples: |
+   - [willing](willingtojoin){"entity": "willingtojoin"}
+
+- intent: notwilling
+  examples: |
+   - [notwilling](willingtojoin){"entity": "willingtojoin"}
+
+- intent: optlap
+  examples: |
+   - [optlap](systemavailability){"entity": "systemavailability"}
+
+- intent: optlap1
+  examples: |
+   - [optlap1](systemavailability){"entity": "systemavailability"}
+
+- intent: bcp
+  examples: |
+   - [bcp](jobchange){"entity": "jobchange"}
+
+- intent: orn
+  examples: |
+   - [orn](jobchange){"entity": "jobchange"}
+
+- intent: relocate
+  examples: |
+   - [relocate](willingtorelocate){"entity": "willingtorelocate"}
+
+- intent: notrelocate
+  examples: |
+   - [notrelocate](willingtorelocate){"entity": "willingtorelocate"}
+
+- intent: offer
+  examples: |
+   - [offer](offersinhand){"entity": "offersinhand"}
+
+- intent: offer1
+  examples: |
+   - [offer1](offersinhand){"entity": "offersinhand"}
+
+- intent: relyears
+  examples: |
+   - [relyears](relevantyears){"entity": "relevantyears"}
+
+- intent: relyears1
+  examples: |
+   - [relyears1](relevantyears){"entity": "relevantyears"}
+
+
+- intent: relyears2
+  examples: |
+   - [relyears2](relevantyears){"entity": "relevantyears"}
+
+- intent: shortlist
+  examples: |
+   - [shortlist](shortlisted){"entity": "shortlisted"}
+
+- intent: shortlist1
+  examples: |
+   - [shortlist1](shortlisted){"entity": "shortlisted"}
+
+- intent: currentcom
+  examples: |
+   - [currentcom]
+
+- intent: currentcom1
+  examples: |
+   - [currentcom1]
+
+
+- intent: apply
+  examples: |
+   - [apply]
+
+- intent: apply1
+  examples: |
+   - [apply1]
+
+- intent: jobapply
+  examples: |
+   - [jobapply]
+
+- intent: nojobappy
+  examples:  |
+   - [nojobappy]
+
+- intent: exitchatbot
+  examples: |
+   - [exitchatbot]
+
+- intent: mlengineer
+  examples: |
+   - [mlengineer](mlengineer)
+
+- intent: angular
+  examples: |
+   - [angular](angular)
+
+
+
+
+ 

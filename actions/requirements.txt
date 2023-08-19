@@ -1,0 +1,6 @@
+pymysql
+mysql-connector-python
+# Add more dependencies here
+
+
+

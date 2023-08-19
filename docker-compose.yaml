@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  rasa:
+    image: rasa/rasa:latest-full
+    ports:
+      - "5005:5005"
+    volumes:
+      - ./:/app
+    command:
+      - run
+      - --enable-api
+      - --cors
+      - "*"
+
+  rasa-actions:
+    image: "07cbd0c9afed1a509738a889cea2a39526dd950715aa9235ebea37dd0dd490cb"
+    volumes:
+      - ./actions:/app/actions
+    expose:
+      - "5055"
+  
+volumes:
+  db:
+    
+      
