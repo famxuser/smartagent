@@ -19,7 +19,6 @@ jobs:
         uses: RasaHQ/rasa-train-test-gha@main
         with:
           rasa_version: 3.6.1
-          requirements_file: requirements.txt
           data_validate: true # Validates domain and data files to check for possible mistakes
           rasa_train: true # Run rasa train
           rasa_test: true # Run rasa test
