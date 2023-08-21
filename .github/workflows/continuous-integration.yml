@@ -5,9 +5,9 @@ name: Train and test Rasa
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 
 jobs:
   training-testing:
