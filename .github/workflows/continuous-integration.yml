@@ -27,7 +27,7 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload model
         if: github.ref == 'refs/heads/main'
-        uses: models/upload-artifact@main
+        uses: actions/upload-artifact@main
         with:
           name: model
           path: models
